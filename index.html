@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f766e">
+  <title>PGMate - Hostel & PG Budget Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark">PG</div><div><strong>PGMate</strong><span>your money, clearer</span></div></div>
+      <button class="close-sidebar" id="close-sidebar" aria-label="Close navigation">&times;</button>
+      <nav class="nav-list" aria-label="Primary navigation">
+        <a class="nav-link active" href="#dashboard" data-section="dashboard"><span>⌂</span> Dashboard</a>
+        <a class="nav-link" href="#expenses" data-section="expenses"><span>↗</span> Expenses</a>
+        <a class="nav-link" href="#budget" data-section="budget"><span>◈</span> Budget</a>
+        <a class="nav-link" href="#rent-bills" data-section="rent-bills"><span>▣</span> Rent &amp; Bills</a>
+        <a class="nav-link" href="#roommate" data-section="roommate"><span>♧</span> Roommate Split</a>
+        <a class="nav-link" href="#analytics" data-section="analytics"><span>◒</span> Analytics</a>
+        <a class="nav-link" href="#summary" data-section="summary"><span>▤</span> Monthly Summary</a>
+      </nav>
+      <div class="sidebar-footer"><div class="tip-icon">✦</div><p><strong>Small steps add up.</strong><br>Track today, enjoy tomorrow.</p></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-button" id="menu-button" aria-label="Open navigation">☰</button>
+        <div><p class="eyebrow" id="current-date-label">SEPTEMBER 2026</p><h1>Good morning, budget buddy.</h1></div>
+        <div class="top-actions"><div class="month-chip">◷ <span id="month-label">This month</span></div><button class="avatar" aria-label="Profile">AS</button></div>
+      </header>
+
+      <section class="page-section active-section" id="dashboard" data-page="dashboard">
+        <div class="section-heading"><div><p class="eyebrow">YOUR FINANCIAL SNAPSHOT</p><h2>Money at a glance</h2></div><button class="primary-button" data-open-expense><span>＋</span> Add expense</button></div>
+        <div class="alert-banner" id="budget-alert"><span class="alert-dot">✦</span><div><strong id="alert-title">You're on track with your budget! 🎉</strong><p id="alert-copy">A clear view of your spending starts here.</p></div></div>
+        <div class="stats-grid">
+          <article class="stat-card income"><div class="stat-top"><span class="stat-icon">💰</span><span class="stat-label">Monthly income</span></div><strong id="stat-income">₹0</strong><span class="stat-meta">Pocket money + salary</span></article>
+          <article class="stat-card expense"><div class="stat-top"><span class="stat-icon">💸</span><span class="stat-label">Total expenses</span></div><strong id="stat-expenses">₹0</strong><span class="stat-meta" id="expense-meta">Recorded this month</span></article>
+          <article class="stat-card savings"><div class="stat-top"><span class="stat-icon">🏦</span><span class="stat-label">Current savings</span></div><strong id="stat-savings">₹0</strong><span class="stat-meta">Income less expenses</span></article>
+          <article class="stat-card goal"><div class="stat-top"><span class="stat-icon">🎯</span><span class="stat-label">Saving goal</span></div><strong id="stat-goal">₹0</strong><span class="stat-meta" id="goal-meta">Set your target below</span></article>
+          <article class="stat-card daily"><div class="stat-top"><span class="stat-icon">📅</span><span class="stat-label">Safe daily limit</span></div><strong id="stat-daily">₹0</strong><span class="stat-meta" id="days-meta">For the remaining days</span></article>
+          <article class="stat-card remaining"><div class="stat-top"><span class="stat-icon">💵</span><span class="stat-label">Remaining budget</span></div><strong id="stat-remaining">₹0</strong><span class="stat-meta">After saving goal</span></article>
+        </div>
+        <div class="dashboard-grid">
+          <article class="panel quick-panel"><div class="panel-heading"><div><p class="eyebrow">QUICK SETUP</p><h3>Make your plan</h3></div><span class="panel-symbol">✎</span></div><form id="budget-form" class="form-grid"><label>Monthly income<input type="number" id="income-input" min="0" step="1" placeholder="e.g. 25000" required></label><label>Monthly saving goal<input type="number" id="goal-input" min="0" step="1" placeholder="e.g. 5000" required></label><button class="primary-button full-width" type="submit">Save budget plan</button></form></article>
+          <article class="panel category-panel"><div class="panel-heading"><div><p class="eyebrow">THIS MONTH</p><h3>Spending by category</h3></div><a class="text-button" href="#analytics">View analytics →</a></div><div id="category-bars" class="category-bars"></div></article>
+        </div>
+      </section>
+
+      <section class="page-section" id="expenses" data-page="expenses">
+        <div class="section-heading"><div><p class="eyebrow">TRANSACTION LOG</p><h2>Every rupee has a story.</h2></div><button class="primary-button" data-open-expense><span>＋</span> Add expense</button></div>
+        <div class="panel expense-panel"><div class="filters"><div class="search-field"><span>⌕</span><input id="search-input" type="search" placeholder="Search descriptions..."></div><select id="category-filter"><option value="all">All categories</option></select><input id="date-filter" type="month" aria-label="Filter by month"><button class="ghost-button" id="clear-filters">Clear</button></div><div class="table-wrap"><table><thead><tr><th>Expense</th><th>Category</th><th>Date</th><th class="align-right">Amount</th><th></th></tr></thead><tbody id="expense-table-body"></tbody></table><div class="empty-state" id="expense-empty"><div class="empty-illustration">◎</div><h3>No expenses yet</h3><p>Add your first transaction and start seeing your money clearly.</p><button class="secondary-button" data-open-expense>Add an expense</button></div></div></div>
+      </section>
+
+      <section class="page-section" id="budget" data-page="budget"><div class="section-heading"><div><p class="eyebrow">MONTHLY CONTROL</p><h2>A budget that breathes.</h2></div></div><div class="budget-layout"><article class="panel budget-hero"><span class="big-icon">◈</span><p class="eyebrow">SPENDABLE AFTER SAVING</p><strong id="budget-available">₹0</strong><p>What you can safely spend this month after setting aside your goal.</p><div class="progress-track"><span id="budget-progress"></span></div><div class="progress-labels"><span id="budget-used-label">₹0 used</span><span id="budget-total-label">of ₹0</span></div></article><article class="panel plan-breakdown"><div class="panel-heading"><h3>Plan breakdown</h3><span class="muted">live</span></div><div class="breakdown-row"><span>Income</span><strong id="breakdown-income">₹0</strong></div><div class="breakdown-row"><span>Saving goal</span><strong id="breakdown-goal">₹0</strong></div><div class="breakdown-row"><span>Recorded expenses</span><strong id="breakdown-expenses">₹0</strong></div><div class="breakdown-row total"><span>Remaining budget</span><strong id="breakdown-remaining">₹0</strong></div></article></div></section>
+
+      <section class="page-section" id="rent-bills" data-page="rent-bills"><div class="section-heading"><div><p class="eyebrow">HOME BASE</p><h2>Rent &amp; bills, handled.</h2></div></div><div class="two-col"><article class="panel"><div class="panel-heading"><div><p class="eyebrow">RENT TRACKER</p><h3>Monthly rent</h3></div><span class="panel-symbol">⌂</span></div><form id="rent-form" class="form-grid"><label>Monthly rent<input id="rent-input" type="number" min="0" placeholder="e.g. 8000" required></label><label>Rent due date<input id="rent-due-input" type="date" required></label><label class="toggle-label"><input id="rent-paid-input" type="checkbox"><span class="toggle"></span> Rent paid for this month</label><button class="primary-button full-width" type="submit">Save rent details</button></form></article><article class="panel rent-status-card"><p class="eyebrow">RENT STATUS</p><div class="rent-status" id="rent-status"><span class="status-pip unpaid"></span><strong>Not set</strong></div><div class="rent-amount" id="rent-amount">₹0</div><p id="rent-due-label">Add your rent details to see the due date.</p></article></div></section>
+
+      <section class="page-section" id="roommate" data-page="roommate"><div class="section-heading"><div><p class="eyebrow">SHARED LIVING</p><h2>Split bills without the maths.</h2></div></div><div class="two-col"><article class="panel split-form-panel"><div class="panel-heading"><div><p class="eyebrow">ROOMMATE EXPENSE SPLIT</p><h3>Fair shares, instantly</h3></div><span class="panel-symbol">♧</span></div><form id="split-form" class="form-grid"><label>Total bill<input id="bill-input" type="number" min="0" step="1" placeholder="e.g. 2400" required></label><label>Number of roommates<input id="roommates-input" type="number" min="1" step="1" placeholder="e.g. 3" required></label><label>Your share<input id="your-share-input" type="number" min="0" step="1" placeholder="Optional"></label><button class="primary-button full-width" type="submit">Calculate split</button></form></article><article class="panel split-result"><p class="eyebrow">YOUR SHARE</p><strong id="split-share">₹0</strong><p id="split-copy">Enter a bill to see each person's share.</p><div class="split-visual"><span></span><span></span><span></span></div><div class="split-saved" id="split-saved">Your last calculation is saved automatically.</div></article></div></section>
+
+      <section class="page-section" id="analytics" data-page="analytics"><div class="section-heading"><div><p class="eyebrow">YOUR PATTERNS</p><h2>Where is my money going?</h2></div></div><div class="analytics-grid"><article class="panel chart-panel"><div class="panel-heading"><div><h3>Expense by category</h3><span class="muted">Current month</span></div></div><div class="chart-wrap"><canvas id="category-chart" height="250"></canvas></div></article><article class="panel chart-panel"><div class="panel-heading"><div><h3>Savings progress</h3><span class="muted">Goal vs current</span></div></div><div class="savings-chart"><div class="donut" id="savings-donut"><div><strong id="savings-percent">0%</strong><span>saved</span></div></div><div class="legend"><span><i class="legend-dot teal"></i> Current savings <strong id="legend-savings">₹0</strong></span><span><i class="legend-dot pale"></i> Goal gap <strong id="legend-gap">₹0</strong></span></div></div></article></div><article class="panel money-list"><div class="panel-heading"><div><h3>Top spending categories</h3><span class="muted">Your biggest monthly outflows</span></div><span class="top-badge" id="top-category-badge">No data yet</span></div><div id="top-category-list"></div></article></section>
+
+      <section class="page-section" id="summary" data-page="summary"><div class="section-heading"><div><p class="eyebrow">MONTHLY REFLECTION</p><h2>See the bigger picture.</h2></div></div><article class="panel summary-panel"><div class="summary-grid"><div><span class="summary-label">Total income</span><strong id="summary-income">₹0</strong></div><div><span class="summary-label">Total expenses</span><strong id="summary-expenses">₹0</strong></div><div><span class="summary-label">Total savings</span><strong id="summary-savings">₹0</strong></div><div><span class="summary-label">Saving goal</span><strong id="summary-goal">₹0</strong></div><div><span class="summary-label">Highest category</span><strong id="summary-highest">—</strong></div><div><span class="summary-label">Average daily spend</span><strong id="summary-average">₹0</strong></div></div><div class="summary-bottom"><div><span class="summary-label">Remaining budget</span><strong id="summary-remaining">₹0</strong></div><p id="comparison-copy">Add a few expenses to unlock your month-on-month comparison.</p></div></article></section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="expense-modal" aria-hidden="true"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="modal-close" aria-label="Close">&times;</button><p class="eyebrow">TRANSACTION</p><h2 id="modal-title">Add an expense</h2><form id="expense-form" class="form-grid"><label>Amount<input id="expense-amount" type="number" min="1" step="1" placeholder="e.g. 350" required></label><label>Category<select id="expense-category" required></select></label><label>Date<input id="expense-date" type="date" required></label><label>Description<input id="expense-description" type="text" maxlength="80" placeholder="e.g. Tuesday mess lunch" required></label><button class="primary-button full-width" type="submit" id="expense-submit">Save expense</button></form></div></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
