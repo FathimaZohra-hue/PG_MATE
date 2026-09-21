@@ -1,64 +1,47 @@
-# PGMate – Hostel & PG Budget Tracker
 
-## About the Project
+# PG Mate – Smart PG & Hostel Management
 
-PGMate is a modern, local-first budget tracker created for students and working professionals living in hostels, PGs, shared rooms, and co-living spaces. It turns everyday transactions into a clear plan for rent, food, bills, safe daily spending, and monthly savings.
+A user-friendly web app designed to help PG and hostel residents manage daily accommodation needs, complaints, expenses, and important information in one place.
 
-## Problem Statement
+## Acknowledgements
 
-Shared living comes with many small, frequent expenses that are easy to lose track of. PGMate helps hostel and PG residents understand where their money is going, control daily spending, split shared bills, and stay on course for a monthly savings goal.
+This project is part of my Data Analyst learning journey, where I focus on developing practical, real-world projects and strengthening my problem-solving, data handling, and analytical thinking skills.
 
-## Features
+PG Mate was created to address common challenges faced by students and working professionals living in PGs and hostels, particularly in managing expenses, rent, shared bills, and monthly financial information.
 
-- Monthly income and saving goal planning
-- Dashboard cards for income, expenses, savings, goal, safe daily limit, and remaining budget
-- Add, edit, delete, search, and filter expense transactions
-- Current-month calculations with automatic remaining-day tracking
-- Rent tracker with due date and paid/unpaid status
-- Roommate bill splitter with per-person share calculation
-- Smart budget alerts when spending is high or a saving goal is at risk
-- Expense-by-category and savings progress visual analytics
-- Monthly summary with highest category, average daily spend, and previous-month comparison
-- Responsive navigation and empty states for a friendly experience on desktop and mobile
-- LocalStorage persistence with no account or backend required
+This project represents my effort to apply my learning to a practical problem and build a useful, user-focused solution.
 
-## Technologies Used
+## Appendix
 
-- HTML5
-- CSS3 with responsive layout and custom properties
-- Vanilla JavaScript
-- Browser LocalStorage API
-- HTML Canvas for lightweight analytics visuals
+This section provides additional information and supporting details related to the PG Mate project.
 
-## How It Works
+It includes supplementary project references that help explain the design and overall structure of the application.
 
-1. Set monthly income and a savings goal in the dashboard.
-2. Add expenses with an amount, category, date, and description.
-3. PGMate calculates current savings, remaining budget, and a safe daily spending limit using the current date.
-4. Use the Expenses view to search or filter records and edit or delete them when needed.
-5. Track rent, mark it paid, and use the roommate split tool for shared bills.
-6. Review Analytics and Monthly Summary to spot your biggest spending categories and improve next month.
 
-All information is saved in the browser's LocalStorage, so it remains available after a refresh on the same device and browser.
+## Color Reference
 
-## Project Structure
+The PG Mate interface uses a clean and simple color palette to make financial information easy to understand and navigate.
 
-```text
-PGMate/
-├── index.html
-├── style.css
-├── script.js
-├── README.md
-└── assets/
-```
+Color Usage	Purpose
+Primary Color	Main actions and important interface elements
+Secondary Color	Supporting elements and highlights
+Background Color	Main application background
+Card Color	Expense, rent, and summary sections
+Text Color	Headings and primary information
+Muted Text	Secondary information and labels
+Success Color	Savings and positive financial indicators
+Warning Color	Pending or attention-required information
+Error Color	Errors and unsuccessful actions
+Color Design Principle
 
-## Future Improvements
+The color palette was chosen to maintain:
 
-- Export transactions to CSV or PDF
-- Optional recurring expenses and bill reminders
-- Multiple month archives and richer month-on-month charts
-- Custom categories and currency preferences
-- Optional cloud sync and sign-in
-- Installable Progressive Web App support
+Clear visual hierarchy
+Easy readability
+Consistent presentation of financial information
+Simple navigation
+A clean and user-friendly experience
+## Screenshots
 
-PGMate was created to help hostel and PG residents manage expenses, control daily spending, and achieve monthly savings goals.
+DASHBOARD_PNG.png
+s
