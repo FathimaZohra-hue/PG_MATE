@@ -41,6 +41,46 @@ Easy readability
 Consistent presentation of financial information
 Simple navigation
 A clean and user-friendly experience
-## Screenshots
+
+## Description
+
+A user-friendly web app designed to help PG and hostel residents manage daily accommodation needs, complaints, expenses, and important information in one place.
+
+## ✨ Features
+
+- 📊 Dashboard for tracking monthly finances
+- 💰 Expense tracking and management
+- 🎯 Monthly budget and saving goals
+- 🏠 Rent and bill management
+- 👥 Roommate expense splitting
+- 📈 Financial analytics and monthly summary
+- 📝 Simple and user-friendly interface
+
+## 🛠️ Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- Git
+- GitHub
+
+## 🔄 How It Works
+
+1. Enter monthly income and saving goal.
+2. Add daily expenses and transactions.
+3. Track rent, bills, and shared expenses.
+4. Monitor budget and savings progress.
+5. View spending patterns through analytics.
+6. Check the monthly financial summary.
+
+## 📸 Project Screenshot
 
 ![alt text](image.png)
+
+## How to Run
+
+1. Clone the repository
+2. Open the project folder in VS Code
+3. Install the required dependencies
+4. Run the application
+5. Open the provided local URL in your browser
