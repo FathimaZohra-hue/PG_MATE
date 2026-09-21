@@ -43,5 +43,4 @@ Simple navigation
 A clean and user-friendly experience
 ## Screenshots
 
-DASHBOARD_PNG.png
-s
+![alt text](image.png)
