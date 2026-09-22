@@ -84,3 +84,11 @@ A user-friendly web app designed to help PG and hostel residents manage daily ac
 3. Install the required dependencies
 4. Run the application
 5. Open the provided local URL in your browser
+
+## Future Improvement
+
+- Add user authentication and login
+- Add online rent payment tracking
+- Add real-time complaint notifications
+- Add expense analytics and reports
+- Develop a mobile-friendly version
