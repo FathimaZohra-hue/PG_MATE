@@ -73,6 +73,10 @@ A user-friendly web app designed to help PG and hostel residents manage daily ac
 5. View spending patterns through analytics.
 6. Check the monthly financial summary.
 
+## Live Demo
+
+https://fathimazohra-hue.github.io/PG_MATE/
+
 ## 📸 Project Screenshot
 
 ![alt text](image.png)
